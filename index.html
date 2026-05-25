@@ -3,88 +3,246 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#075985" />
 
   <title>אורי בן ישי | אינסטלטור מקצועי באזור המרכז</title>
-  <meta name="description" content="אורי בן ישי - אינסטלטור מקצועי באזור המרכז. פתיחת סתימות, איתור נזילות, תיקון דודי שמש וחשמל, שירות מהיר ואמין מחולון ועד רעננה.">
+  <meta name="description" content="אורי בן ישי - אינסטלטור מקצועי באזור המרכז. פתיחת סתימות, איתור נזילות, תיקוני צנרת, דודי שמש וחשמל, שירות מהיר ואמין מחולון ועד רעננה." />
 
   <style>
     :root {
-      --blue: #0b5ed7;
+      --primary: #075985;
+      --primary-dark: #063b5b;
+      --accent: #facc15;
+      --whatsapp: #25d366;
       --dark: #07111f;
-      --light: #f5f8fc;
-      --gold: #ffb703;
-      --green: #25D366;
       --text: #1f2937;
       --muted: #64748b;
+      --bg: #f4f8fb;
       --card: #ffffff;
-      --radius: 22px;
+      --border: #dbe7ef;
+      --radius: 24px;
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+      --focus: #ffbf00;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background: var(--light);
+      font-family: Arial, "Helvetica Neue", sans-serif;
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.75;
+      font-size: 18px;
+    }
+
+    body.high-contrast {
+      --primary: #000000;
+      --primary-dark: #000000;
+      --accent: #ffff00;
+      --whatsapp: #008a2e;
+      --dark: #000000;
+      --text: #000000;
+      --muted: #000000;
+      --bg: #ffffff;
+      --card: #ffffff;
+      --border: #000000;
+      --shadow: none;
+    }
+
+    body.large-text {
+      font-size: 21px;
+    }
+
+    body.pause-animations * {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     a {
+      color: inherit;
       text-decoration: none;
     }
 
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 4px solid var(--focus);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -80px;
+      right: 16px;
+      background: #000;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 12px;
+      z-index: 9999;
+      font-weight: 800;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    .accessibility-panel {
+      position: fixed;
+      top: 90px;
+      left: 16px;
+      z-index: 9998;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .accessibility-panel button {
+      border: 2px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+    .topbar {
+      background: var(--dark);
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 15px;
+    }
+
+    .topbar-inner,
+    .nav-inner,
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      gap: 18px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--primary);
+    }
+
+    .logo span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 6px;
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #111;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 900;
+      box-shadow: 0 10px 25px rgba(250,204,21,0.25);
+    }
+
     .hero {
-      min-height: 100vh;
-      background:
-        linear-gradient(120deg, rgba(7,17,31,.92), rgba(11,94,215,.65)),
-        url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=1800');
-      background-size: cover;
-      background-position: center;
-      color: white;
+      min-height: 88vh;
       display: flex;
       align-items: center;
-      padding: 40px 22px;
+      color: #fff;
+      background:
+        linear-gradient(115deg, rgba(7,17,31,0.94), rgba(7,89,133,0.78)),
+        url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=1800') center/cover no-repeat;
+      padding: 80px 0;
     }
 
-    .hero-inner {
-      max-width: 1200px;
-      margin: auto;
+    .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 40px;
+      grid-template-columns: 1.05fr 0.95fr;
       align-items: center;
+      gap: 42px;
     }
 
-    .badge {
-      display: inline-block;
-      background: rgba(255,255,255,.15);
-      border: 1px solid rgba(255,255,255,.25);
-      padding: 8px 16px;
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 9px 16px;
       border-radius: 999px;
-      margin-bottom: 20px;
-      font-weight: bold;
+      font-weight: 900;
+      margin-bottom: 22px;
     }
 
     h1 {
-      font-size: clamp(42px, 6vw, 76px);
-      line-height: 1.05;
-      margin-bottom: 18px;
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.03;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
     }
 
-    .hero p {
-      font-size: 22px;
-      max-width: 650px;
-      color: #e8eef8;
+    .hero-subtitle {
+      font-size: clamp(21px, 2.4vw, 29px);
+      color: #e0f2fe;
+      max-width: 720px;
       margin-bottom: 28px;
     }
 
     .actions {
       display: flex;
-      gap: 12px;
+      gap: 14px;
       flex-wrap: wrap;
     }
 
@@ -93,71 +251,84 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 16px 24px;
-      border-radius: 14px;
-      font-weight: 800;
-      transition: .25s ease;
-      box-shadow: 0 12px 28px rgba(0,0,0,.18);
+      min-height: 54px;
+      padding: 15px 24px;
+      border-radius: 16px;
+      font-weight: 900;
+      border: 0;
+      cursor: pointer;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
     }
 
     .btn:hover {
       transform: translateY(-3px);
     }
 
-    .btn-call {
-      background: var(--gold);
+    .btn-primary {
+      background: var(--accent);
       color: #111;
+      box-shadow: 0 16px 34px rgba(250,204,21,0.22);
     }
 
     .btn-whatsapp {
-      background: var(--green);
-      color: white;
+      background: var(--whatsapp);
+      color: #fff;
+      box-shadow: 0 16px 34px rgba(37,211,102,0.22);
     }
 
     .hero-card {
-      background: rgba(255,255,255,.12);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,.22);
-      padding: 30px;
-      border-radius: var(--radius);
-      box-shadow: 0 30px 80px rgba(0,0,0,.25);
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 32px;
+      padding: 34px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 30px 90px rgba(0,0,0,0.28);
     }
 
-    .hero-card h3 {
-      font-size: 26px;
+    .hero-card h2 {
+      font-size: 28px;
       margin-bottom: 18px;
     }
 
-    .check {
-      margin: 12px 0;
-      font-size: 18px;
+    .trust-list {
+      display: grid;
+      gap: 13px;
+      font-weight: 800;
+    }
+
+    .trust-list li,
+    .clean-list li {
+      list-style: none;
     }
 
     section {
-      padding: 80px 22px;
+      padding: 84px 0;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section-title {
+    .section-head {
       text-align: center;
-      margin-bottom: 44px;
+      margin-bottom: 46px;
     }
 
-    .section-title span {
-      color: var(--blue);
-      font-weight: bold;
+    .section-kicker {
+      color: var(--primary);
+      font-weight: 900;
+      margin-bottom: 8px;
     }
 
-    .section-title h2 {
-      font-size: clamp(32px, 4vw, 48px);
+    .section-head h2 {
+      font-size: clamp(32px, 4vw, 50px);
       color: var(--dark);
+      line-height: 1.15;
     }
 
-    .grid {
+    .section-head p {
+      max-width: 700px;
+      margin: 14px auto 0;
+      color: var(--muted);
+    }
+
+    .cards-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 22px;
@@ -165,33 +336,33 @@
 
     .card {
       background: var(--card);
-      padding: 28px;
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      box-shadow: 0 16px 40px rgba(15,23,42,.08);
-      border: 1px solid rgba(15,23,42,.06);
-      transition: .25s ease;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      transition: transform 0.22s ease;
     }
 
     .card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-5px);
     }
 
     .icon {
-      width: 54px;
-      height: 54px;
-      background: #eaf2ff;
-      color: var(--blue);
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 16px;
-      font-size: 26px;
+      background: #e0f2fe;
+      color: var(--primary);
+      font-size: 28px;
       margin-bottom: 18px;
     }
 
     .card h3 {
       color: var(--dark);
-      font-size: 22px;
+      font-size: 23px;
       margin-bottom: 10px;
     }
 
@@ -199,134 +370,233 @@
       color: var(--muted);
     }
 
-    .about {
-      background: white;
+    .why {
+      background: #fff;
     }
 
-    .about-box {
+    .split {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 32px;
+      gap: 34px;
       align-items: center;
     }
 
-    .about-text {
-      background: var(--light);
-      padding: 36px;
-      border-radius: var(--radius);
+    .feature-box {
+      background: linear-gradient(135deg, #eff6ff, #ecfeff);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 38px;
+      box-shadow: var(--shadow);
     }
 
-    .about-text h2 {
-      font-size: 40px;
+    .feature-box h2 {
+      font-size: 42px;
       color: var(--dark);
-      margin-bottom: 18px;
+      margin-bottom: 16px;
+      line-height: 1.15;
     }
 
-    .about-list {
+    .clean-list {
       margin-top: 20px;
       display: grid;
-      gap: 10px;
-      font-weight: bold;
+      gap: 12px;
+      font-weight: 900;
     }
 
-    .areas {
-      background: var(--dark);
-      color: white;
+    .emergency {
+      background: var(--primary-dark);
+      color: #fff;
     }
 
-    .areas .section-title h2 {
-      color: white;
+    .emergency-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 32px;
+      padding: 42px;
     }
 
-    .area-tags {
+    .emergency h2 {
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .areas-grid {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 12px;
     }
 
-    .area-tags span {
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.16);
-      padding: 12px 20px;
+    .areas-grid span {
+      background: #fff;
+      color: var(--primary-dark);
+      border: 1px solid var(--border);
       border-radius: 999px;
-      font-weight: bold;
+      padding: 12px 20px;
+      font-weight: 900;
+      box-shadow: 0 8px 20px rgba(15,23,42,0.06);
     }
 
-    .reviews {
+    .reviews-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
-    .review {
-      background: white;
-      padding: 28px;
-      border-radius: var(--radius);
-      box-shadow: 0 16px 40px rgba(15,23,42,.08);
-    }
-
     .stars {
-      color: #f59e0b;
+      color: #d97706;
       font-size: 22px;
       margin-bottom: 14px;
     }
 
-    .contact {
-      background:
-        linear-gradient(135deg, var(--blue), #083b88);
-      color: white;
-      text-align: center;
-      border-radius: 32px;
-      padding: 52px 28px;
-      max-width: 1000px;
+    .faq-list {
+      max-width: 900px;
       margin: auto;
-      box-shadow: 0 24px 60px rgba(11,94,215,.3);
+      display: grid;
+      gap: 14px;
     }
 
-    .contact h2 {
-      font-size: 42px;
+    details {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px 24px;
+      box-shadow: 0 10px 28px rgba(15,23,42,0.06);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 900;
+      color: var(--dark);
+    }
+
+    details p {
+      margin-top: 12px;
+      color: var(--muted);
+    }
+
+    .contact-wrap {
+      background: linear-gradient(135deg, var(--primary), #0891b2);
+      color: #fff;
+      border-radius: 36px;
+      padding: 48px;
+      box-shadow: 0 26px 70px rgba(7,89,133,0.28);
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .contact-wrap h2 {
+      font-size: 44px;
+      line-height: 1.12;
       margin-bottom: 12px;
     }
 
-    .contact p {
-      font-size: 20px;
-      margin-bottom: 24px;
-      color: #eaf2ff;
+    .contact-wrap p {
+      color: #e0f2fe;
+      margin-bottom: 20px;
     }
 
-    .floating {
+    .contact-form {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 26px;
+      padding: 24px;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-weight: 900;
+      margin-bottom: 7px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 2px solid transparent;
+      font-size: 18px;
+      background: #fff;
+      color: #111;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .form-note {
+      font-size: 14px;
+      color: #e0f2fe;
+      margin-top: 10px;
+    }
+
+    .floating-whatsapp {
       position: fixed;
       left: 18px;
       bottom: 18px;
-      z-index: 999;
-      background: var(--green);
-      color: white;
+      z-index: 9997;
+      background: var(--whatsapp);
+      color: #fff;
       padding: 15px 20px;
       border-radius: 999px;
-      font-weight: bold;
-      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+      font-weight: 900;
+      box-shadow: 0 16px 38px rgba(0,0,0,0.25);
     }
 
     footer {
       background: #050914;
-      color: white;
+      color: #fff;
+      padding: 32px 0;
       text-align: center;
-      padding: 24px;
     }
 
-    @media (max-width: 900px) {
-      .hero-inner,
-      .about-box {
+    footer a {
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 940px) {
+      .hero-grid,
+      .split,
+      .contact-wrap,
+      .emergency-box {
         grid-template-columns: 1fr;
       }
 
-      .grid {
+      .cards-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .reviews {
+      .reviews-grid {
         grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
       }
 
       .hero {
@@ -336,10 +606,20 @@
       .actions {
         justify-content: center;
       }
+
+      .accessibility-panel {
+        top: auto;
+        bottom: 82px;
+        left: 12px;
+      }
     }
 
-    @media (max-width: 560px) {
-      .grid {
+    @media (max-width: 580px) {
+      body {
+        font-size: 17px;
+      }
+
+      .cards-grid {
         grid-template-columns: 1fr;
       }
 
@@ -347,174 +627,308 @@
         width: 100%;
       }
 
-      .floating {
+      .hero-card,
+      .feature-box,
+      .contact-wrap,
+      .emergency-box {
+        padding: 26px;
+      }
+
+      .floating-whatsapp {
         right: 14px;
         left: 14px;
         text-align: center;
+      }
+
+      .accessibility-panel button {
+        padding: 9px 12px;
+        font-size: 14px;
       }
     }
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">דלג לתוכן המרכזי</a>
 
-  <header class="hero">
-    <div class="hero-inner">
+  <div class="accessibility-panel" aria-label="אפשרויות נגישות">
+    <button type="button" id="contrastBtn" aria-pressed="false">ניגודיות</button>
+    <button type="button" id="textBtn" aria-pressed="false">הגדלת טקסט</button>
+    <button type="button" id="motionBtn" aria-pressed="false">עצירת תנועה</button>
+  </div>
 
+  <div class="topbar" role="banner">
+    <div class="topbar-inner">
+      <span>שירותי אינסטלציה באזור המרכז - מחולון ועד רעננה</span>
+      <a href="tel:0507212199" aria-label="התקשרו לאורי בן ישי בטלפון 0507212199">📞 050-721-2199</a>
+    </div>
+  </div>
+
+  <nav class="navbar" aria-label="תפריט ראשי">
+    <div class="nav-inner">
+      <a class="logo" href="#top" aria-label="אורי בן ישי - חזרה לראש העמוד">
+        אורי בן ישי
+        <span>אינסטלטור מקצועי</span>
+      </a>
+
+      <div class="nav-links" aria-label="קישורי ניווט באתר">
+        <a href="#services">שירותים</a>
+        <a href="#why">למה אנחנו</a>
+        <a href="#areas">אזורי שירות</a>
+        <a href="#faq">שאלות נפוצות</a>
+        <a href="#contact">יצירת קשר</a>
+      </div>
+
+      <a class="nav-cta" href="tel:0507212199">חייג עכשיו</a>
+    </div>
+  </nav>
+
+  <header id="top" class="hero">
+    <div class="container hero-grid">
       <div>
-        <div class="badge">אינסטלטור מקצועי באזור המרכז</div>
-        <h1>אורי בן ישי</h1>
-        <p>
-          שירותי אינסטלציה אמינים, מהירים ומקצועיים - פתיחת סתימות, איתור נזילות, תיקוני צנרת, דודי שמש וחשמל, ותחזוקה לוועדי בתים.
+        <div class="eyebrow">💧 זמינות גבוהה באזור המרכז</div>
+        <h1>אינסטלטור מקצועי, מהיר ואמין</h1>
+        <p class="hero-subtitle">
+          פתיחת סתימות, איתור נזילות, תיקוני צנרת, דודי שמש וחשמל ושירות לוועדי בתים - עם עבודה נקייה, יחס אישי ומחיר הוגן.
         </p>
 
-        <div class="actions">
-          <a class="btn btn-call" href="tel:0507212199">📞 התקשר עכשיו</a>
-          <a class="btn btn-whatsapp" href="https://wa.me/972507212199?text=שלום%20אורי,%20אני%20צריך%20שירות%20אינסטלציה" target="_blank">💬 שלח וואטסאפ</a>
+        <div class="actions" aria-label="פעולות מהירות">
+          <a class="btn btn-primary" href="tel:0507212199" aria-label="התקשרו עכשיו לאורי בן ישי">📞 התקשר עכשיו</a>
+          <a class="btn btn-whatsapp" href="https://wa.me/972507212199?text=שלום%20אורי,%20אני%20צריך%20שירות%20אינסטלציה" target="_blank" rel="noopener" aria-label="שליחת הודעת וואטסאפ לאורי בן ישי">💬 שלח וואטסאפ</a>
         </div>
       </div>
 
-      <div class="hero-card">
-        <h3>למה לקוחות בוחרים באורי?</h3>
-        <div class="check">✔ הגעה מהירה באזור המרכז</div>
-        <div class="check">✔ עבודה נקייה ומקצועית</div>
-        <div class="check">✔ מחירים הוגנים ושקיפות מלאה</div>
-        <div class="check">✔ שירות מחולון ועד רעננה</div>
-        <div class="check">✔ יחס אישי ואחריות על העבודה</div>
-      </div>
-
+      <aside class="hero-card" aria-label="יתרונות השירות">
+        <h2>למה לקוחות בוחרים באורי?</h2>
+        <ul class="trust-list">
+          <li>✔ הגעה מהירה באזור המרכז</li>
+          <li>✔ עבודה נקייה ומקצועית</li>
+          <li>✔ שקיפות במחיר לפני תחילת העבודה</li>
+          <li>✔ שירות מחולון ועד רעננה</li>
+          <li>✔ יחס אישי ואחריות על העבודה</li>
+        </ul>
+      </aside>
     </div>
   </header>
 
-  <section>
-    <div class="container">
-      <div class="section-title">
-        <span>השירותים שלנו</span>
-        <h2>פתרונות אינסטלציה לבית ולעסק</h2>
-      </div>
+  <main id="main">
+    <section id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">השירותים שלנו</div>
+          <h2 id="services-title">פתרונות אינסטלציה לבית, לעסק ולבניין</h2>
+          <p>שירות מהיר ומקצועי לתקלות קטנות וגדולות, עם דגש על אבחון נכון ופתרון יסודי.</p>
+        </div>
 
-      <div class="grid">
-        <div class="card">
-          <div class="icon">🚿</div>
-          <h3>פתיחת סתימות</h3>
-          <p>טיפול מהיר בסתימות בכיור, באמבטיה, בשירותים ובקווי ביוב.</p>
+        <div class="cards-grid">
+          <article class="card">
+            <div class="icon" aria-hidden="true">🚿</div>
+            <h3>פתיחת סתימות</h3>
+            <p>טיפול בסתימות בכיור, באמבטיה, בשירותים ובקווי ביוב.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">💧</div>
+            <h3>איתור נזילות</h3>
+            <p>בדיקה מקצועית, זיהוי מקור הבעיה ותיקון נקודתי לפי הצורך.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">🔧</div>
+            <h3>תיקוני צנרת</h3>
+            <p>תיקון פיצוצים, החלפת חלקי צנרת, ברזים, סיפונים וניאגרות.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">☀️</div>
+            <h3>דודי שמש וחשמל</h3>
+            <p>תיקון, התקנה וטיפול בתקלות בדודי שמש ודודי חשמל.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="why" aria-labelledby="why-title">
+      <div class="container split">
+        <div class="feature-box">
+          <div class="section-kicker">מקצועיות ואמון</div>
+          <h2 id="why-title">שירות שמרגישים כבר מהשיחה הראשונה</h2>
+          <p>
+            כשיש תקלה באינסטלציה צריך מענה מהיר, ברור ואמין. לכן השירות מתמקד בזמינות, אבחון נכון, עבודה נקייה ושקיפות מול הלקוח.
+          </p>
+
+          <ul class="clean-list">
+            <li>✔ הצעת מחיר ברורה לפני העבודה</li>
+            <li>✔ שירות ללקוחות פרטיים ולוועדי בתים</li>
+            <li>✔ עבודה מסודרת ונקייה</li>
+            <li>✔ מענה מהיר לתקלות דחופות</li>
+          </ul>
         </div>
 
         <div class="card">
-          <div class="icon">💧</div>
-          <h3>איתור נזילות</h3>
-          <p>בדיקה מקצועית, זיהוי מקור הבעיה ומתן פתרון נקודתי.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🔧</div>
-          <h3>תיקוני צנרת</h3>
-          <p>החלפת צנרת, תיקון פיצוצים, ברזים, סיפונים וניאגרות.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon">☀️</div>
-          <h3>דודי שמש וחשמל</h3>
-          <p>תיקון, התקנה וטיפול בתקלות בדודי שמש ודודי חשמל.</p>
+          <div class="icon" aria-hidden="true">🏠</div>
+          <h3>מתאים לבתים, דירות ובניינים</h3>
+          <p>
+            סתימה קטנה, נזילה שמטרידה כבר שבוע, דוד שלא מחמם או תקלה חוזרת בבניין - מקבלים טיפול מקצועי, אישי ומהיר.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="about">
-    <div class="container about-box">
-      <div class="about-text">
-        <h2>שירות מקצועי, אמין ונקי</h2>
-        <p>
-          אורי בן ישי מספק שירותי אינסטלציה באזור המרכז עם דגש על זמינות גבוהה,
-          עבודה יסודית, יחס אישי ושקיפות מול הלקוח מהרגע הראשון.
-        </p>
-
-        <div class="about-list">
-          <div>✔ שירות ללקוחות פרטיים</div>
-          <div>✔ שירות לוועדי בתים</div>
-          <div>✔ מענה לתקלות דחופות</div>
-          <div>✔ הצעת מחיר ברורה לפני העבודה</div>
+    <section class="emergency" aria-labelledby="emergency-title">
+      <div class="container emergency-box">
+        <div>
+          <h2 id="emergency-title">יש תקלה דחופה?</h2>
+          <p>אל תחכו שהנזק יגדל. התקשרו עכשיו או שלחו וואטסאפ עם תמונה קצרה של התקלה.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0507212199">📞 050-721-2199</a>
+          <a class="btn btn-whatsapp" href="https://wa.me/972507212199?text=שלום%20אורי,%20יש%20לי%20תקלה%20דחופה%20באינסטלציה" target="_blank" rel="noopener">💬 וואטסאפ דחוף</a>
         </div>
       </div>
+    </section>
 
-      <div class="card">
-        <div class="icon">🏠</div>
-        <h3>מתאים לבתים, דירות ובניינים</h3>
-        <p>
-          בין אם מדובר בסתימה קטנה, נזילה מטרידה או תקלה מורכבת בצנרת -
-          תקבלו שירות מקצועי, מהיר ואמין.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="areas">
-    <div class="container">
-      <div class="section-title">
-        <span>אזורי שירות</span>
-        <h2>שירות מחולון ועד רעננה</h2>
-      </div>
-
-      <div class="area-tags">
-        <span>חולון</span>
-        <span>בת ים</span>
-        <span>ראשון לציון</span>
-        <span>תל אביב</span>
-        <span>רמת גן</span>
-        <span>גבעתיים</span>
-        <span>הרצליה</span>
-        <span>רעננה</span>
-        <span>המרכז והסביבה</span>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="section-title">
-        <span>לקוחות ממליצים</span>
-        <h2>מה אומרים על השירות?</h2>
-      </div>
-
-      <div class="reviews">
-        <div class="review">
-          <div class="stars">★★★★★</div>
-          <p>“שירות מהיר ומקצועי. הגיע בזמן, הסביר בדיוק מה הבעיה ופתר אותה במקום.”</p>
+    <section id="areas" aria-labelledby="areas-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">אזורי שירות</div>
+          <h2 id="areas-title">שירות מחולון ועד רעננה</h2>
+          <p>ניתן לעדכן את הרשימה לפי האזורים המדויקים שאורי רוצה לקחת בהם עבודות.</p>
         </div>
 
-        <div class="review">
-          <div class="stars">★★★★★</div>
-          <p>“מחיר הוגן, עבודה נקייה ויחס מעולה. בהחלט אזמין שוב במקרה הצורך.”</p>
-        </div>
-
-        <div class="review">
-          <div class="stars">★★★★★</div>
-          <p>“איש מקצוע אמין ואדיב מאוד. טיפל בנזילה בצורה יסודית ומקצועית.”</p>
+        <div class="areas-grid" aria-label="רשימת אזורי שירות">
+          <span>חולון</span>
+          <span>בת ים</span>
+          <span>ראשון לציון</span>
+          <span>תל אביב</span>
+          <span>רמת גן</span>
+          <span>גבעתיים</span>
+          <span>הרצליה</span>
+          <span>רעננה</span>
+          <span>המרכז והסביבה</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <div class="contact">
-      <h2>צריכים אינסטלטור?</h2>
-      <p>לחצו עכשיו לשיחה או שלחו הודעה בוואטסאפ</p>
+    <section aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">לקוחות ממליצים</div>
+          <h2 id="reviews-title">שירות אמין שמקבלים עליו המלצות</h2>
+        </div>
 
-      <div class="actions" style="justify-content:center;">
-        <a class="btn btn-call" href="tel:0507212199">📞 050-721-2199</a>
-        <a class="btn btn-whatsapp" href="https://wa.me/972507212199?text=שלום%20אורי,%20אני%20צריך%20שירות%20אינסטלציה" target="_blank">💬 WhatsApp</a>
+        <div class="reviews-grid">
+          <article class="card">
+            <div class="stars" aria-label="דירוג חמישה כוכבים">★★★★★</div>
+            <p>“הגיע מהר, הסביר מה הבעיה ופתר אותה במקום. שירות מקצועי ונעים.”</p>
+          </article>
+
+          <article class="card">
+            <div class="stars" aria-label="דירוג חמישה כוכבים">★★★★★</div>
+            <p>“מחיר הוגן, עבודה נקייה ויחס מעולה. ממליצים בחום.”</p>
+          </article>
+
+          <article class="card">
+            <div class="stars" aria-label="דירוג חמישה כוכבים">★★★★★</div>
+            <p>“טיפל בנזילה בצורה יסודית ומקצועית. איש אמין ואדיב.”</p>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <a class="floating" href="https://wa.me/972507212199?text=שלום%20אורי,%20אני%20צריך%20שירות%20אינסטלציה" target="_blank">
+    <section id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">שאלות נפוצות</div>
+          <h2 id="faq-title">מה חשוב לדעת לפני שמזמינים אינסטלטור?</h2>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>האם אפשר לשלוח תמונה בוואטסאפ לפני הגעה?</summary>
+            <p>כן. מומלץ לשלוח תמונה או סרטון קצר של התקלה כדי להבין טוב יותר את הבעיה עוד לפני ההגעה.</p>
+          </details>
+
+          <details>
+            <summary>האם יש שירות לוועדי בתים?</summary>
+            <p>כן. ניתן לקבל שירות לתחזוקה שוטפת, תקלות חוזרות, סתימות ובעיות צנרת בבניינים.</p>
+          </details>
+
+          <details>
+            <summary>באילו אזורים ניתן שירות?</summary>
+            <p>השירות ניתן באזור המרכז, כולל חולון, בת ים, ראשון לציון, תל אביב, רמת גן, גבעתיים, הרצליה ורעננה.</p>
+          </details>
+
+          <details>
+            <summary>האם מקבלים הצעת מחיר לפני העבודה?</summary>
+            <p>כן. לפני תחילת העבודה תקבלו הסבר ברור על התקלה, דרך הטיפול והעלות הצפויה.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container contact-wrap">
+        <div>
+          <h2 id="contact-title">צריכים אינסטלטור?</h2>
+          <p>השאירו פרטים או צרו קשר ישירות בטלפון/וואטסאפ.</p>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="tel:0507212199">📞 התקשר עכשיו</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/972507212199?text=שלום%20אורי,%20אני%20צריך%20שירות%20אינסטלציה" target="_blank" rel="noopener">💬 וואטסאפ</a>
+          </div>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" aria-label="טופס יצירת קשר">
+          <div class="field">
+            <label for="name">שם מלא</label>
+            <input id="name" name="name" type="text" autocomplete="name" required aria-required="true" />
+          </div>
+
+          <div class="field">
+            <label for="phone">טלפון</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required aria-required="true" inputmode="tel" />
+          </div>
+
+          <div class="field">
+            <label for="message">איך אפשר לעזור?</label>
+            <textarea id="message" name="message" required aria-required="true"></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">שליחת פנייה</button>
+          <p class="form-note">הערה: כדי שהטופס יעבוד צריך להחליף את YOUR_FORM_ID בקישור Formspree אמיתי. עד אז מומלץ להשתמש בטלפון או בוואטסאפ.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <a class="floating-whatsapp" href="https://wa.me/972507212199?text=שלום%20אורי,%20אני%20צריך%20שירות%20אינסטלציה" target="_blank" rel="noopener" aria-label="שליחת הודעת וואטסאפ לאורי בן ישי">
     💬 שלח הודעה לאורי
   </a>
 
   <footer>
-    © 2026 אורי בן ישי - אינסטלטור מקצועי באזור המרכז
+    <div class="container">
+      <p>© 2026 אורי בן ישי - אינסטלטור מקצועי באזור המרכז</p>
+      <p><a href="#accessibility-statement">הצהרת נגישות</a></p>
+      <div id="accessibility-statement" style="margin-top:16px; max-width:850px; margin-inline:auto; font-size:15px; color:#dbeafe;">
+        האתר נבנה עם דגש על נגישות: ניווט מקלדת, קישור דילוג לתוכן, ניגודיות צבעים, טקסטים חלופיים במידת הצורך, כפתורי נגישות בסיסיים ומבנה סמנטי. אם נתקלתם בקושי בגלישה באתר ניתן ליצור קשר בטלפון 050-721-2199.
+      </div>
+    </div>
   </footer>
 
+  <script>
+    const contrastBtn = document.getElementById('contrastBtn');
+    const textBtn = document.getElementById('textBtn');
+    const motionBtn = document.getElementById('motionBtn');
+
+    function toggleClass(button, className) {
+      const active = document.body.classList.toggle(className);
+      button.setAttribute('aria-pressed', String(active));
+    }
+
+    contrastBtn.addEventListener('click', () => toggleClass(contrastBtn, 'high-contrast'));
+    textBtn.addEventListener('click', () => toggleClass(textBtn, 'large-text'));
+    motionBtn.addEventListener('click', () => toggleClass(motionBtn, 'pause-animations'));
+  </script>
 </body>
 </html>
