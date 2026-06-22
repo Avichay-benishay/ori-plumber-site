@@ -270,7 +270,7 @@
       inset: 0;
       background:
         linear-gradient(90deg, rgba(7,17,31,.96), rgba(7,17,31,.76), rgba(7,17,31,.64)),
-        url("assets/work-water-line.jpg") center/cover no-repeat;
+        url("assets/hero-plumbing.jpg") center/cover no-repeat;
       opacity: .52;
       z-index: -2;
     }
@@ -347,8 +347,11 @@
     .hero-media {
       position: relative;
       min-height: 520px;
-      display: grid;
-      place-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
     }
 
     .profile-card {
@@ -380,48 +383,32 @@
       border-radius: 28px;
     }
 
-  .profile-badge{
-  margin-top: -18px;
-  width: 340px;
-  background: #fff;
-  color: #0f172a;
-  border-radius: 24px;
-  padding: 18px 22px;
-  text-align: center;
-  box-shadow: 0 20px 50px rgba(0,0,0,.15);
-  border: 1px solid #e2e8f0;
-  position: relative;
-  z-index: 10;
-}
-
-.profile-badge strong{
-  display:block;
-  font-size:28px;
-  font-weight:900;
-  margin-bottom:4px;
-}
-
-.profile-badge span{
-  display:block;
-  color:#64748b;
-  font-weight:700;
-}
-
-.hero-media{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
+    .profile-badge {
+      position: static;
+      width: min(430px, 100%);
+      background: rgba(7,17,31,.88);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 24px;
+      padding: 18px 22px;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 18px 45px rgba(0,0,0,.22);
+      backdrop-filter: blur(14px);
+    }
 
     .profile-badge strong {
       display: block;
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 950;
+      line-height: 1.2;
     }
 
     .profile-badge span {
+      display: block;
+      margin-top: 5px;
       color: #bae6fd;
       font-weight: 900;
+      line-height: 1.4;
     }
 
     .quick-panel {
@@ -1059,8 +1046,13 @@
 
       .profile-card { width: 286px; border-radius: 28px; }
       .profile-card img { height: 292px; border-radius: 22px; }
-      .profile-badge { right: 18px; left: 18px; bottom: 18px; padding: 12px; }
-      .profile-badge strong { font-size: 21px; }
+      .profile-badge {
+        width: 286px;
+        padding: 14px 16px;
+        border-radius: 20px;
+      }
+      .profile-badge strong { font-size: 22px; }
+      .profile-badge span { font-size: 14px; }
 
       .btn { width: 100%; min-height: 54px; }
       section { padding: 68px 0; }
@@ -1226,10 +1218,10 @@
       <div class="hero-media" aria-label="אורי בן ישי - אינסטלטור מקצועי">
         <div class="profile-card">
           <img src="assets/profile.jpg" alt="אורי בן ישי - אינסטלטור מקצועי באזור המרכז" />
-          <div class="profile-badge">
-            <strong>אורי בן ישי</strong>
-            <span>אבחון מקצועי • מחיר הוגן • עבודה נקייה</span>
-          </div>
+        </div>
+        <div class="profile-badge">
+          <strong>אורי בן ישי</strong>
+          <span>אבחון מקצועי • מחיר הוגן • עבודה נקייה</span>
         </div>
       </div>
     </div>
@@ -1315,7 +1307,7 @@
         <div class="section-head">
           <div class="kicker">גלריית עבודות</div>
           <h2 id="gallery-title">עבודות אינסטלציה מהשטח</h2>
-                  </div>
+        </div>
 
         <div class="work-grid">
           <article class="card work-card">
@@ -1471,16 +1463,6 @@
   </footer>
 
   <script>
-
-    document.querySelectorAll('img[src^="assets/"]').forEach((img) => {
-      img.addEventListener('error', () => {
-        if (!img.dataset.fallbackTried) {
-          img.dataset.fallbackTried = 'true';
-          img.src = img.getAttribute('src').replace('assets/', 'assets/');
-        }
-      });
-    });
-
     const navLinks = document.getElementById('navLinks');
     const mobileToggle = document.getElementById('mobileToggle');
 
