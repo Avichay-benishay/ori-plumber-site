@@ -351,7 +351,6 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 28px;
     }
 
     .profile-card {
@@ -384,31 +383,28 @@
     }
 
     .profile-badge {
-      position: static;
+      margin-top: 18px;
       width: min(430px, 100%);
-      background: rgba(7,17,31,.88);
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 24px;
-      padding: 18px 22px;
+      background: rgba(7,17,31,.90);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 22px;
+      padding: 16px 22px;
       color: #fff;
       text-align: center;
-      box-shadow: 0 18px 45px rgba(0,0,0,.22);
-      backdrop-filter: blur(14px);
+      box-shadow: 0 18px 44px rgba(0,0,0,.22);
     }
 
     .profile-badge strong {
       display: block;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 950;
-      line-height: 1.2;
     }
 
     .profile-badge span {
       display: block;
-      margin-top: 5px;
+      margin-top: 4px;
       color: #bae6fd;
       font-weight: 900;
-      line-height: 1.4;
     }
 
     .quick-panel {
@@ -588,26 +584,59 @@
       color: #0f3f59;
     }
 
-    .trust-image {
-      border-radius: var(--radius-xl);
+    .trust-card {
       min-height: 520px;
-      background: url("assets/work-water-line.jpg") center/cover no-repeat;
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at 18% 14%, rgba(14,165,233,.16), transparent 28%),
+        linear-gradient(180deg, #ffffff, #f8fbfd);
+      border: 1px solid var(--border);
       box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
+      padding: 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 22px;
     }
 
-    .trust-image::after {
-      content: "אבחון נכון • עבודה נקייה • פתרון יסודי";
-      position: absolute;
-      inset: auto 22px 22px 22px;
-      background: rgba(7,17,31,.84);
-      color: #fff;
-      border-radius: 22px;
-      padding: 18px;
-      font-weight: 950;
-      text-align: center;
-      backdrop-filter: blur(12px);
+    .trust-card h3 {
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.15;
+      color: var(--text);
+    }
+
+    .trust-card p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .trust-points {
+      display: grid;
+      gap: 14px;
+      list-style: none;
+    }
+
+    .trust-points li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #f0f9ff;
+      border: 1px solid #d8effc;
+      border-radius: 18px;
+      padding: 14px 16px;
+      color: #0f3f59;
+      font-weight: 900;
+    }
+
+    .trust-points span {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: #e0f2fe;
+      color: var(--primary);
+      flex: 0 0 auto;
     }
 
     .gallery {
@@ -1010,6 +1039,7 @@
       .hero-media { order: -1; min-height: auto; }
       .profile-card { width: min(360px, 100%); }
       .profile-card img { height: 360px; }
+      .profile-badge { width: min(360px, 100%); }
 
       .actions, .chips { justify-content: center; }
 
@@ -1024,7 +1054,7 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .trust-image { min-height: 420px; }
+      .trust-card { min-height: auto; }
     }
 
     @media (max-width: 640px) {
@@ -1046,13 +1076,8 @@
 
       .profile-card { width: 286px; border-radius: 28px; }
       .profile-card img { height: 292px; border-radius: 22px; }
-      .profile-badge {
-        width: 286px;
-        padding: 14px 16px;
-        border-radius: 20px;
-      }
-      .profile-badge strong { font-size: 22px; }
-      .profile-badge span { font-size: 14px; }
+      .profile-badge { width: 286px; margin-top: 14px; padding: 12px; }
+      .profile-badge strong { font-size: 21px; }
 
       .btn { width: 100%; min-height: 54px; }
       section { padding: 68px 0; }
@@ -1071,7 +1096,7 @@
       .work-card { padding: 0; }
       .work-card img { height: 240px; }
 
-      .trust-image { min-height: 330px; }
+      .trust-card { min-height: auto; padding: 24px; }
       .emergency .actions { width: 100%; }
 
       .contact-wrap { border-radius: 28px; }
@@ -1194,7 +1219,7 @@
     <div class="container hero-grid">
       <div>
         <div class="eyebrow">💧 שירות מהיר, נקי ומקצועי</div>
-        <h1>אינסטלטור באזור המרכז שמגיע לפתור כל תקלה.</h1>
+        <h1>אינסטלטור באזור המרכז שמגיע לפתור תקלה</h1>
         <p class="hero-subtitle">
           <strong>כל עבודות האינסטלציה לבית, לעסק ולבניין:</strong>
           פתיחת סתימות, איתור נזילות, תיקוני צנרת, דודי שמש וחשמל, קווי מים ראשיים ושירות קבוע לוועדי בתים.
@@ -1231,7 +1256,7 @@
     <div class="container quick-grid">
       <div class="quick-item">
         <div class="quick-icon" aria-hidden="true">⚡</div>
-        <div><strong>מענה מהיר</strong><span>לכל סוגי התקלות</span></div>
+        <div><strong>מענה מהיר</strong><span>לתקלות דחופות</span></div>
       </div>
       <div class="quick-item">
         <div class="quick-icon" aria-hidden="true">🧾</div>
@@ -1254,7 +1279,7 @@
         <div class="section-head">
           <div class="kicker">אמינות בשטח</div>
           <h2 id="stats-title">שירות אישי ומקצועי לכל תקלה</h2>
-          <p>אורי מספק מענה מהיר ללקוחות פרטיים, עסקים, מוסדות פרטיים, ועדי בתים בכל אזור המרכז.</p>
+          <p>אורי מספק מענה מהיר ללקוחות פרטיים, עסקים, מוסדות פרטיים ווועדי בתים בכל אזור המרכז.</p>
         </div>
 
         <div class="stats-grid">
@@ -1298,7 +1323,16 @@
             <li>✔ אפשרות לשלוח תמונה/סרטון בוואטסאפ לאבחון ראשוני</li>
           </ul>
         </div>
-        <div class="trust-image" role="img" aria-label="תיקון קו מים ראשי בשטח"></div>
+        <div class="trust-card">
+          <h3>מקבלים פתרון ברור, מסודר ונקי</h3>
+          <p>המטרה היא לא רק להגיע מהר, אלא להבין את מקור התקלה ולתת פתרון שמחזיק לאורך זמן.</p>
+          <ul class="trust-points">
+            <li><span>1</span>אבחון ראשוני לפי תיאור, תמונה או סרטון</li>
+            <li><span>2</span>הסבר ברור לפני תחילת העבודה</li>
+            <li><span>3</span>ביצוע מסודר והשארת אזור עבודה נקי</li>
+            <li><span>4</span>שירות המשך במידת הצורך</li>
+          </ul>
+        </div>
       </div>
     </section>
 
