@@ -1093,6 +1093,175 @@
         height: 250px;
       }
     }
+    /* ========================= */
+/* MOBILE FIX */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 92%;
+    padding: 0;
+  }
+
+  /* HERO */
+
+  .hero {
+    min-height: auto;
+    padding: 50px 0;
+  }
+
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 38px !important;
+    line-height: 1.15;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .hero-profile {
+    order: -1;
+  }
+
+  .profile-card {
+    width: 280px;
+    margin: auto;
+  }
+
+  .profile-image {
+    height: 280px;
+  }
+
+  /* BUTTONS */
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .actions .btn {
+    width: 100%;
+  }
+
+  /* SERVICES */
+
+  .cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .card h3 {
+    font-size: 24px;
+  }
+
+  /* GALLERY */
+
+  .image-gallery {
+    grid-template-columns: 1fr !important;
+    gap: 18px;
+  }
+
+  .work-card img {
+    height: 250px;
+  }
+
+  /* WHY US */
+
+  .split {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* REVIEWS */
+
+  .reviews-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* CONTACT */
+
+  .contact-wrap {
+    grid-template-columns: 1fr !important;
+    padding: 25px;
+  }
+
+  /* STATS */
+
+  .stats-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  /* NAV */
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-inner {
+    min-height: 60px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  /* WHATSAPP */
+
+  .floating-whatsapp {
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    text-align: center;
+    width: auto;
+  }
+
+  /* ACCESSIBILITY */
+
+  .accessibility-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 32px !important;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card {
+    width: 240px;
+  }
+
+  .profile-image {
+    height: 240px;
+  }
+
+}
 
   </style>
 </head>
