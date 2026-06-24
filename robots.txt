@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ori-plumber.co.il/sitemap.xml
