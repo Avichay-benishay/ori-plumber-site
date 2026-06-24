@@ -1,105 +1,261 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>הצהרת נגישות | אורי בן ישי</title>
-<style>
-body{
-    font-family:Arial,sans-serif;
-    line-height:1.9;
-    max-width:1000px;
-    margin:auto;
-    padding:40px 20px;
-    color:#1e293b;
-    background:#f8fafc;
-}
-h1,h2{
-    color:#075985;
-}
-.section{
-    background:#fff;
-    padding:25px;
-    border-radius:16px;
-    margin-bottom:20px;
-    box-shadow:0 4px 15px rgba(0,0,0,.05);
-}
-a{
-    color:#0284c7;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>הצהרת נגישות | אורי בן ישי</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, "Helvetica Neue", sans-serif;
+      background: #f4f8fb;
+      color: #0f172a;
+      line-height: 1.9;
+      font-size: 18px;
+    }
+
+    .page {
+      width: min(1000px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #07111f, #0b3a56);
+      color: #ffffff;
+      border-radius: 28px;
+      padding: 42px;
+      margin-bottom: 24px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, .16);
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.15;
+    }
+
+    .hero p {
+      margin: 0;
+      color: #dbeafe;
+      font-size: 20px;
+    }
+
+    .section {
+      background: #ffffff;
+      border: 1px solid #dbe5ee;
+      border-radius: 22px;
+      padding: 28px;
+      margin-bottom: 18px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, .07);
+    }
+
+    h2 {
+      color: #075985;
+      margin: 0 0 12px;
+      font-size: 27px;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0 22px 0 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: #0369a1;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    a:focus-visible {
+      outline: 4px solid #facc15;
+      outline-offset: 4px;
+      border-radius: 6px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #facc15, #f97316);
+      color: #111827;
+      text-decoration: none;
+      box-shadow: 0 12px 28px rgba(249, 115, 22, .2);
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      color: #64748b;
+      margin-top: 24px;
+      font-size: 15px;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        font-size: 16px;
+      }
+
+      .page {
+        width: min(100% - 24px, 1000px);
+        padding: 28px 0;
+      }
+
+      .hero,
+      .section {
+        padding: 22px;
+        border-radius: 20px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      h2 {
+        font-size: 23px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <main class="page">
+    <section class="hero" aria-labelledby="accessibility-title">
+      <h1 id="accessibility-title">הצהרת נגישות</h1>
+      <p>
+        אורי בן ישי מעניק שירותי אינסטלציה באזור המרכז ופועל להעניק שירות מקצועי, שוויוני ונגיש לכלל לקוחותיו, לרבות אנשים עם מוגבלויות.
+      </p>
+    </section>
 
-<h1>הצהרת נגישות</h1>
+    <section class="section">
+      <h2>מטרת ההצהרה</h2>
+      <p>
+        מטרתנו היא לאפשר לכל אדם לגלוש באתר בצורה נוחה, ברורה ונגישה ככל האפשר, תוך התאמה לטכנולוגיות מסייעות ולמגוון רחב של אמצעי גלישה.
+      </p>
+      <p>
+        אנו משקיעים מאמצים לשיפור חוויית המשתמש באתר ולשמירה על שירות שוויוני, מכבד ונגיש.
+      </p>
+    </section>
 
-<div class="section">
-<p>
-אורי בן ישי רואה חשיבות רבה במתן שירות שוויוני לכלל לקוחותיו ופועל להנגשת האתר והשירותים המוצעים בו לאנשים עם מוגבלויות.
-אנו משקיעים מאמצים רבים כדי לאפשר חוויית גלישה נוחה, נגישה וידידותית ככל האפשר לכל המשתמשים.
-</p>
-</div>
+    <section class="section">
+      <h2>תקן הנגישות</h2>
+      <p>
+        התאמות הנגישות באתר בוצעו בהתאם לתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג–2013,
+        ובהתאם להנחיות התקן הישראלי ת"י 5568 המבוסס על הנחיות WCAG 2.1 ברמה AA.
+      </p>
+      <p>
+        האתר נבנה ונבדק לצורך התאמה לדפדפנים נפוצים, בהם Google Chrome, Mozilla Firefox, Microsoft Edge ו־Safari.
+      </p>
+    </section>
 
-<div class="section">
-<h2>מחויבות לנגישות</h2>
+    <section class="section">
+      <h2>אמצעי הנגישות הקיימים באתר</h2>
+      <ul>
+        <li>ניווט מלא באתר באמצעות מקלדת.</li>
+        <li>כפתור דילוג ישיר לתוכן המרכזי בתחילת העמוד.</li>
+        <li>מבנה תוכן ברור הכולל כותרות, פסקאות ורשימות.</li>
+        <li>תפריטים וקישורים ברורים המסבירים את יעד הלחיצה.</li>
+        <li>טקסט חלופי (ALT) לתמונות ואייקונים רלוונטיים.</li>
+        <li>סימון פוקוס ברור בעת ניווט באמצעות מקלדת.</li>
+        <li>התאמה למסכים בגדלים שונים, לרבות מובייל וטאבלטים.</li>
+        <li>שימוש בצבעים בעלי ניגודיות משופרת בין טקסט לרקע.</li>
+        <li>שימוש במאפייני ARIA לשיפור התמיכה בטכנולוגיות מסייעות.</li>
+        <li>הנגשת תפריטים, טפסים, שדות קלט וחלון כלי הנגישות.</li>
+      </ul>
+    </section>
 
-<p>
-האתר נבנה בהתאם לעקרונות הנגישות המקובלים במטרה לאפשר שימוש נוח גם באמצעות מקלדת, קוראי מסך וטכנולוגיות מסייעות נוספות.
-</p>
+    <section class="section">
+      <h2>כלי נגישות באתר</h2>
+      <p>
+        באתר קיים כפתור נגישות צף המאפשר לבצע התאמות תצוגה שונות לפי צורך המשתמש.
+      </p>
+      <ul>
+        <li>הגדלת והקטנת גודל הטקסט.</li>
+        <li>שינוי ריווח שורות.</li>
+        <li>שינוי ריווח אותיות.</li>
+        <li>הפעלת מצב ניגודיות גבוהה.</li>
+        <li>הדגשת קישורים.</li>
+        <li>מעבר לגופן קריא יותר.</li>
+        <li>ביטול אנימציות ואפקטים חזותיים.</li>
+        <li>הסתרת תמונות.</li>
+        <li>איפוס הגדרות הנגישות.</li>
+      </ul>
+    </section>
 
-<p>
-המאמצים להנגשת האתר מבוצעים בהתאם להוראות תקנות שוויון זכויות לאנשים עם מוגבלות ולהמלצות התקן הישראלי ת"י 5568 המבוסס על הנחיות WCAG 2.1 ברמת AA.
-</p>
-</div>
+    <section class="section">
+      <h2>שינוי תצוגה באתר</h2>
+      <p>
+        ניתן להגדיל או להקטין את תצוגת האתר באמצעות הדפדפן, לדוגמה על ידי לחיצה על מקש Ctrl יחד עם הסימן + להגדלה,
+        או Ctrl יחד עם הסימן - להקטנה.
+      </p>
+      <p>
+        בנוסף, ניתן להשתמש בכלי הנגישות באתר כדי לשנות את גודל הגופן, ריווח השורות וריווח האותיות.
+      </p>
+      <p>
+        גולשים שאינם משתמשים בעכבר יכולים לנווט באתר באמצעות מקש Tab. לחיצה על Enter תפעיל את הקישור או הכפתור עליו נמצא הסמן.
+      </p>
+    </section>
 
-<div class="section">
-<h2>התאמות הנגישות באתר</h2>
+    <section class="section">
+      <h2>התאמה למשתמשים עם מוגבלות ראייה ושימוש בטכנולוגיות מסייעות</h2>
+      <p>
+        האתר תוכנן כך שיתמוך בשימוש עם תוכנות קורא מסך, ניווט מקלדת, הגדלת תצוגה וכלי נגישות בסיסיים של מערכות ההפעלה והדפדפנים.
+      </p>
+      <p>
+        במקומות בהם מופיעים אפקטים חזותיים או אנימציות, ניתן לבטל אותם באמצעות כלי הנגישות באתר.
+      </p>
+    </section>
 
-<ul>
-<li>אפשרות ניווט מלאה באמצעות מקלדת.</li>
-<li>כפתור דילוג ישיר לתוכן המרכזי.</li>
-<li>שמירה על מבנה כותרות תקין.</li>
-<li>טקסט חלופי (Alt) לתמונות.</li>
-<li>סימון פוקוס ברור בעת ניווט.</li>
-<li>אפשרות הגדלת והקטנת גודל הטקסט.</li>
-<li>אפשרות הגדלת ריווח שורות.</li>
-<li>אפשרות הגדלת ריווח אותיות.</li>
-<li>אפשרות לניגודיות גבוהה.</li>
-<li>הדגשת קישורים.</li>
-<li>עצירת אנימציות ואפקטים חזותיים.</li>
-<li>התאמה למכשירים ניידים ולטאבלטים.</li>
-</ul>
+    <section class="section">
+      <h2>סייגים לנגישות</h2>
+      <p>
+        אנו עושים ככל שניתן על מנת להבטיח כי כלל דפי האתר יהיו נגישים ושמישים לכלל המשתמשים.
+        יחד עם זאת, ייתכן שחלקים מסוימים באתר טרם הונגשו במלואם או שטרם נמצא עבורם פתרון טכנולוגי מתאים.
+      </p>
+      <p>
+        אם נתקלתם בבעיה כלשהי בנושא נגישות, נשמח לקבל את פנייתכם ולפעול לתיקון הבעיה בהקדם האפשרי.
+      </p>
+    </section>
 
-</div>
+    <section class="section">
+      <h2>יצירת קשר בנושא נגישות</h2>
+      <p>
+        אם במהלך השימוש באתר נתקלתם בקושי בנושא נגישות, ניתן ליצור קשר ונשמח לסייע.
+      </p>
+      <p>
+        <strong>אחראי פניות נגישות:</strong> אורי בן ישי<br>
+        <strong>טלפון:</strong> <a href="tel:0507212199">050-721-2199</a><br>
+        <strong>אזור שירות:</strong> המרכז והסביבה
+      </p>
+      <p>
+        אנו מתחייבים לבחון כל פנייה ולעשות כמיטב יכולתנו לספק מענה מתאים בזמן סביר.
+      </p>
+    </section>
 
-<div class="section">
-<h2>סייגים לנגישות</h2>
+    <a class="back-link" href="index.html">חזרה לאתר</a>
 
-<p>
-למרות מאמצינו להנגיש את כלל דפי האתר, ייתכן שחלקים מסוימים טרם הונגשו במלואם או שטרם נמצא עבורם פתרון טכנולוגי מתאים.
-אם נתקלתם בבעיה כלשהי, נשמח לקבל משוב ולפעול לתיקונה בהקדם האפשרי.
-</p>
-
-</div>
-
-<div class="section">
-<h2>יצירת קשר בנושא נגישות</h2>
-
-<p>
-אם במהלך השימוש באתר נתקלתם בקושי בנושא נגישות, נשמח לקבל את פנייתכם.
-</p>
-
-<p>
-<strong>אורי בן ישי</strong><br>
-טלפון: <a href="tel:0507212199">050-721-2199</a><br>
-אזור שירות: המרכז והסביבה
-</p>
-
-</div>
-
-<p>
-<a href="index.html">חזרה לאתר</a>
-</p>
-
+    <footer>
+      <p>עודכן לאחרונה: 2026</p>
+    </footer>
+  </main>
 </body>
 </html>
