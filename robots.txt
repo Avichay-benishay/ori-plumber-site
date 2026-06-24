@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ori-plumber.co.il/sitemap.xml
+Sitemap: https://ori-plumber-site.vercel.app/sitemap.xml
