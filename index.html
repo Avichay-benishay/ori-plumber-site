@@ -2009,6 +2009,40 @@
     toolButtons.forEach(button => {
       button.addEventListener('click', saveAccessibilityState);
     });
+      // GA4 conversion tracking
+  document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+    link.addEventListener('click', () => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'call_click', {
+          event_category: 'contact',
+          event_label: 'phone'
+        });
+      }
+    });
+  });
+
+  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+    link.addEventListener('click', () => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'whatsapp_click', {
+          event_category: 'contact',
+          event_label: 'whatsapp'
+        });
+      }
+    });
+  });
+
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', () => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'lead_form_submit', {
+          event_category: 'lead',
+          event_label: 'contact_form'
+        });
+      }
+    });
+  }
 
   </script>
 </body>
